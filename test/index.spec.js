@@ -33,7 +33,14 @@ describe("index.html", function() {
 				done();
 			});
 		});
-		
+
+		it("invitation is visible", function(done) {
+			browser.visit(home).then(function () {
+		      	expect(browser.text("#invitation")).toEqual("Enter a number :");
+				done();
+			});
+		});
+
 		it("input field is visible", function(done) {
 			browser.visit(home).then(function () {
 		      	expect(browser.query("#number")).toBeDefined();
@@ -41,9 +48,9 @@ describe("index.html", function() {
 			});
 		});
 
-		it("trigger is visible", function(done) {
+		it("decomposition's trigger is visible", function(done) {
 			browser.visit(home).then(function () {
-		      	expect(browser.text("#decompose")).toEqual("go!");
+		      	expect(browser.text("#decompose")).toEqual("launch decomposition");
 				done();
 			});
 		});

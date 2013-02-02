@@ -1,0 +1,14 @@
+body {
+	background : rgb(0, 200, 200);
+	text-align : center;
+}
+
+#decompose {
+	text-decoration: none;
+	border-style: solid;
+	border-width: 1px;
+}
+
+#decomposition {
+	color : white;
+}
