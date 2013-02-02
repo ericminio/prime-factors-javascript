@@ -1,4 +1,6 @@
-Outside-in tdd to be deployed on Heroku with Node.js
+Outside-in tdd with Node.js. 
+
+See it live: (http://prime-factors-javascript.herokuapp.com/)
 
 Tests with jasmine-node
 . npm install
