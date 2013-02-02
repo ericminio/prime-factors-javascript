@@ -1,0 +1,9 @@
+Outside-in tdd to be deployed on Heroku with Node.js
+
+Tests with jasmine-node
+. npm install
+. start the server locally: node web.js
+. jasmine-node test --verbose
+. jasmine-node spec --verbose
+
+should be all green :)
