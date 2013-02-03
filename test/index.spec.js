@@ -36,7 +36,7 @@ describe("index.html", function() {
 
 		it("invitation is visible", function(done) {
 			browser.visit(home).then(function () {
-		      	expect(browser.text("#invitation")).toEqual("Enter a number :");
+		      	expect(browser.query("#invitation")).toBeDefined();
 				done();
 			});
 		});
@@ -50,7 +50,7 @@ describe("index.html", function() {
 
 		it("decomposition's trigger is visible", function(done) {
 			browser.visit(home).then(function () {
-		      	expect(browser.text("#decompose")).toEqual("launch decomposition");
+		      	expect(browser.query("#decompose")).toBeDefined();
 				done();
 			});
 		});
