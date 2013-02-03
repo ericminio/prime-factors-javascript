@@ -1,14 +1,27 @@
 body {
-	background : rgb(0, 200, 200);
-	text-align : center;
+	background: rgb(240, 240, 240);
 }
 
-#decompose {
+.title {
+	padding: 0px 0px 20px 0px;
+	text-align: center;
+	font-weight:bold;
+}
+
+.form {
+	padding: 10px 0px;
+}
+
+.button {
 	text-decoration: none;
-	border-style: solid;
-	border-width: 1px;
+	border: 1px solid;
+	background: rgb(0, 150, 0);
+	border-color: rgb(0, 150, 0);
+	color: white;
+	border-radius:20px;
+	padding:2px 10px; 
 }
 
-#decomposition {
-	color : white;
+#number, #decomposition {
+	color: rgb(0, 120, 0);
 }

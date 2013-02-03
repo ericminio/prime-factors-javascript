@@ -8,9 +8,21 @@
 	<script src="js/listener.js"></script>
 </head>
 <body>
-	<label id="invitation">Enter a number :</label>
-	<input id="number" />
-	<a id="decompose" onclick="decompose();" href="#" >launch decomposition</a>
-	<div id="decomposition">30 = 2 x 3 x 5</div>
+	<section class="title">
+		<label>Prime factors</label>
+	</section>
+	
+	<section class="form">
+		<label id="invitation">Enter a number :</label>
+		<input id="number">
+		<a class="button" id="decompose" onclick="decompose()" href="#">decompose!</a>
+	</section>
+	
+	<section>
+		<label>Did you know that </label>
+		<label id="decomposition">30 = 2 x 3 x 5</label>
+		<label> ?</label>
+	</section>
+	
 </body>
 </html>
