@@ -1,16 +1,12 @@
 primeFactorsOf = function(input) {
-	factors = [];
 	divisor = 2;
-
 	while (divisor <= input) {
-		while (input % divisor == 0) {
-			factors.push(divisor);
-			input /= divisor;
+		if (input % divisor == 0) {
+			return [divisor].concat( primeFactorsOf(input/divisor) );
 		}
 		divisor++;
 	}
-
-	return factors;
+	return [];
 }
 
 var module = module || {};
