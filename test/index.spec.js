@@ -54,7 +54,14 @@ describe("index.html", function() {
 				done();
 			});
 		});
-		
+	
+		it("displays a 'fork me on github.com' banner", function(done) {
+			browser.visit(home).
+				then(function () {
+		      		expect(browser.link("#github").href).toEqual("https://github.com/ericminio/prime-factors-javascript");
+					done();
+				});
+		})
 	});
 		
 });
