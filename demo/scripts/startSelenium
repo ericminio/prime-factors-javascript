@@ -1,0 +1,4 @@
+cd scripts
+java -jar -Dwebdriver.chrome.driver=./chromedriver ./selenium-standalone.jar
+cd ..
+
