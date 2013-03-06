@@ -1,16 +1,18 @@
 Browser = require("zombie");
-var serving = require('../public/server');
+var serving = require('../public/serving');
+var Server = require('../public/server.js');
 
 describe("decomposition", function() {
 
 	var home = "http://localhost:5000/index.html";
 	var browser = new Browser();
+	var server = new Server(serving('public'));
 	
 	beforeEach(function() {	
-		server = require('http').createServer(serving('public')).listen(5000, 'localhost');		
+		server.start();
 	});
 	afterEach(function() {
-		server.close();
+		server.stop();
 	});	
 		
 	it("offers to display the prime factors of a number", function(done) {
