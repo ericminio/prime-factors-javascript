@@ -59,4 +59,22 @@ describe("Server", function() {
 			done();
 		});
 	});
+	
+	it("content-type is text/html for .html files", function(done) {
+		fs.writeFileSync(folder + '/index.html', 'content');
+
+		request("http://localhost:5000/index.html", function(error, response, body) {
+			expect(response.headers['content-type']).toBe('text/html');
+			done();
+		});
+	});
+	
+	it("content-type is text/plain for files without extensions", function(done) {
+		fs.writeFileSync(folder + '/a-file', 'content');
+
+		request("http://localhost:5000/a-file", function(error, response, body) {
+			expect(response.headers['content-type']).toBe('text/plain');
+			done();
+		});
+	});
 });
