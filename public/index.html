@@ -4,6 +4,7 @@
 	<title>Prime factors decomposer</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<script src="js/lib/jquery-1.9.0.min.js"></script>
+	
 	<script src="js/primeFactors.js"></script>
 	<script src="js/listener.js"></script>
 </head>
@@ -15,7 +16,7 @@
 	<section class="form">
 		<label id="invitation">Enter a number :</label>
 		<input id="number">
-		<a class="button" id="decompose" onclick="decompose()" href="#">decompose!</a>
+		<a class="button" id="decompose" onclick="new DecompositionListener().decompose()" href="#">decompose!</a>
 	</section>
 	
 	<section>

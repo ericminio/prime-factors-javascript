@@ -8,15 +8,16 @@ describe("decomposition", function() {
 	it("displays the decomposition of the input number", function(done) {
 		browser.visit(home).
 			then(function () {
-				browser.fill("#number", "30");
-				return browser.clickLink("#decompose");
+				browser.fill("#number", "42")
+					   .clickLink("#decompose");
 			}).
 			then(function() {
-				expect(browser.text("#decomposition")).toEqual("30 = 2 x 3 x 5");
+				expect(browser.text("#decomposition")).toEqual("42 = 2 x 3 x 7");
 				done();
 			}).
 			fail(function(error) {
-				console.log(error);
+				expect(error.toString()).toBeNull();
+				done();
 			});
 	});		
 	
