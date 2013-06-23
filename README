@@ -4,7 +4,6 @@ See it live: http://prime-factors-javascript.herokuapp.com/
 
 Tests with jasmine-node
 . npm install
-. start the server locally: node web.js
 . jasmine-node test --verbose
 . jasmine-node spec --verbose
 

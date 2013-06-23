@@ -4,4 +4,5 @@ selenium-standalone.jar
 demo/scripts/chromedriver
 demo/scripts/chromedriver.log
 archives
+test/data
 

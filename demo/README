@@ -1,7 +1,7 @@
 Prerequisites
 =============
 
-Not installed to keep this repo light:
+Not installed to keep this repo light (should be in folder script):
 * selenium-standalone.jar
 * chromedriver
 

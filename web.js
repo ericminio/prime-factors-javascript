@@ -1,9 +1,5 @@
-var static = require('node-static');
+var serving = require('./public/js/serving');
+var Server = require('./public/js/server');
 
-var file = new(static.Server)('./public');
-
-require('http').createServer(function (request, response) {
-    request.addListener('end', function () {
-        file.serve(request, response);
-    });
-}).listen(process.env.PORT || 5000);
+var server = new Server(serving('public'));
+server.start();
