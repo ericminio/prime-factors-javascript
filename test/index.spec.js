@@ -1,76 +1,45 @@
-var Browser = require("zombie");
-var serving = require('../public/js/serving');
-var Server = require('../public/js/server');
+var cheerio = require('cheerio');
 
 describe("index.html", function() {
 
-	var page = "http://localhost:5000/index.html";
-
-	var server = new Server(serving('public'));
-	var browser = new Browser();
+	var page;
 
 	beforeEach(function() {	
-		server.start();
-	});
-	
-	afterEach(function() {
-		server.stop();
+		page = cheerio.load(require('fs').readFileSync('./public/index.html').toString());
 	});
 	
 	describe("page's title", function() {
 	
-		it("is 'prime factors decomposer'", function(done) {
-			browser.visit(page).then(function () {
-				expect(browser.text("title")).toEqual("Prime factors decomposer");
-				done();
-			});
+		it("is 'prime factors decomposer'", function() {			
+			expect(page('title').text()).toBe('Prime factors decomposer');
 		});
 	});
 	
 	describe("page's element", function() {
 		
-		it("decomposition's result placeholder is ready", function(done) {
-			browser.visit(page).then(function () {
-		      	expect(browser.query("#decomposition")).toBeDefined();
-				done();
-			});
+		it("decomposition's result placeholder is ready", function() {
+			expect(page('#decomposition').html()).not.toBeNull();
+		});		
+
+		it("decomposition's placeholder shows an example of decomposition", function() {
+			expect(page('#decomposition').text()).toBe('30 = 2 x 3 x 5');
+		});		
+
+		it("invitation is visible", function() {
+			expect(page('#invitation').html()).not.toBeNull();
 		});
 		
-		it("decomposition placeholder shows an example of decomposition", function(done) {
-			browser.visit(page).then(function () {
-		      	expect(browser.text("#decomposition")).toEqual("30 = 2 x 3 x 5");
-				done();
-			});
+		it("input field is visible", function() {
+			expect(page('#number').html()).not.toBeNull();
 		});
-
-		it("invitation is visible", function(done) {
-			browser.visit(page).then(function () {
-		      	expect(browser.query("#invitation")).toBeDefined();
-				done();
-			});
+		
+		it("decomposition trigger is visible", function() {
+			expect(page('#decompose').html()).not.toBeNull();
 		});
-
-		it("input field is visible", function(done) {
-			browser.visit(page).then(function () {
-		      	expect(browser.query("#number")).toBeDefined();
-				done();
-			});
+		
+		it("displays a 'fork me on github.com' banner", function() {
+			expect(page('#github').attr('href')).toBe('https://github.com/ericminio/prime-factors-javascript');
 		});
-
-		it("decomposition's trigger is visible", function(done) {
-			browser.visit(page).then(function () {
-		      	expect(browser.query("#decompose")).toBeDefined();
-				done();
-			});
-		});
-	
-		it("displays a 'fork me on github.com' banner", function(done) {
-			browser.visit(page).
-				then(function () {
-		      		expect(browser.link("#github").href).toEqual("https://github.com/ericminio/prime-factors-javascript");
-					done();
-				});
-		})
 	});
 		
 });
