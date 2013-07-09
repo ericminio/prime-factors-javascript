@@ -1,4 +1,4 @@
-[![Travis Build Status](http://travis-ci.org/ericminio/prime-factors-javascript.png)](http://travis-ci.org/ericminio/prime-factors-javascript.png)
+[![Travis Build Status](https://api.travis-ci.org/ericminio/prime-factors-javascript.png)](http://travis-ci.org/ericminio/prime-factors-javascript)
 
 Outside-in tdd with Node.js. 
 
